@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `barang` (
 
 -- Dumping data for table db_inventori.barang: ~1 rows (approximately)
 /*!40000 ALTER TABLE `barang` DISABLE KEYS */;
-REPLACE INTO `barang` (`id`, `kode_barang`, `nama_barang`, `stok`, `satuan`) VALUES
+INSERT IGNORE INTO `barang` (`id`, `kode_barang`, `nama_barang`, `stok`, `satuan`) VALUES
 	(3, '80488224', 'Dancow', 12, 'pcs');
 /*!40000 ALTER TABLE `barang` ENABLE KEYS */;
 
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `data_toko` (
 
 -- Dumping data for table db_inventori.data_toko: ~1 rows (approximately)
 /*!40000 ALTER TABLE `data_toko` DISABLE KEYS */;
-REPLACE INTO `data_toko` (`id`, `nama_toko`, `nama_pemilik`, `no_telepon`, `alamat`) VALUES
+INSERT IGNORE INTO `data_toko` (`id`, `nama_toko`, `nama_pemilik`, `no_telepon`, `alamat`) VALUES
 	(1, 'Toko Maju terus pantang mundur', 'Kripik Indomart', '081381100046', 'Jalan panjang menuju langit biru');
 /*!40000 ALTER TABLE `data_toko` ENABLE KEYS */;
 
@@ -141,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `pengguna` (
 
 -- Dumping data for table db_inventori.pengguna: ~1 rows (approximately)
 /*!40000 ALTER TABLE `pengguna` DISABLE KEYS */;
-REPLACE INTO `pengguna` (`id`, `kode`, `nama`, `username`, `password`) VALUES
+INSERT IGNORE INTO `pengguna` (`id`, `kode`, `nama`, `username`, `password`) VALUES
 	(1, 'PGN17', 'Administrator', 'admin', 'admin');
 /*!40000 ALTER TABLE `pengguna` ENABLE KEYS */;
 
@@ -158,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `petugas` (
 
 -- Dumping data for table db_inventori.petugas: ~1 rows (approximately)
 /*!40000 ALTER TABLE `petugas` DISABLE KEYS */;
-REPLACE INTO `petugas` (`id`, `kode`, `nama`, `username`, `password`) VALUES
+INSERT IGNORE INTO `petugas` (`id`, `kode`, `nama`, `username`, `password`) VALUES
 	(4, 'PETUGAS - 38', 'petugas01', 'PTGS38', 'petugas01');
 /*!40000 ALTER TABLE `petugas` ENABLE KEYS */;
 
@@ -176,7 +176,7 @@ CREATE TABLE IF NOT EXISTS `supplier` (
 
 -- Dumping data for table db_inventori.supplier: ~1 rows (approximately)
 /*!40000 ALTER TABLE `supplier` DISABLE KEYS */;
-REPLACE INTO `supplier` (`id`, `kode`, `nama`, `email`, `telepon`, `alamat`) VALUES
+INSERT IGNORE INTO `supplier` (`id`, `kode`, `nama`, `email`, `telepon`, `alamat`) VALUES
 	(2, 'SPL501', 'MAJU KOMPUTER', 'majukomputer@web.com', '085855312455', 'Jl. maju Komputer');
 /*!40000 ALTER TABLE `supplier` ENABLE KEYS */;
 
