@@ -1,351 +1,156 @@
--- phpMyAdmin SQL Dump
--- version 5.0.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Waktu pembuatan: 18 Mar 2020 pada 14.50
--- Versi server: 10.4.11-MariaDB
--- Versi PHP: 7.2.28
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `db_inventori`
---
-
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               10.4.22-MariaDB - mariadb.org binary distribution
+-- Server OS:                    Win64
+-- HeidiSQL Version:             11.2.0.6213
 -- --------------------------------------------------------
 
---
--- Struktur dari tabel `barang`
---
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-CREATE TABLE `barang` (
-  `id` int(11) NOT NULL,
+
+-- Dumping database structure for db_inventori
+DROP DATABASE IF EXISTS `db_inventori`;
+CREATE DATABASE IF NOT EXISTS `db_inventori` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `db_inventori`;
+
+-- Dumping structure for table db_inventori.barang
+DROP TABLE IF EXISTS `barang`;
+CREATE TABLE IF NOT EXISTS `barang` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `kode_barang` varchar(20) DEFAULT NULL,
   `nama_barang` varchar(80) DEFAULT NULL,
   `stok` int(11) DEFAULT NULL,
-  `satuan` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `satuan` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `barang`
---
+-- Data exporting was unselected.
 
-INSERT INTO `barang` (`id`, `kode_barang`, `nama_barang`, `stok`, `satuan`) VALUES
-(1, '36143613', 'Keyboard', 12, 'pcs'),
-(2, '15747218', 'Mouse', 6, 'pcs');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `customer`
---
-
-CREATE TABLE `customer` (
-  `id` int(11) NOT NULL,
+-- Dumping structure for table db_inventori.customer
+DROP TABLE IF EXISTS `customer`;
+CREATE TABLE IF NOT EXISTS `customer` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `kode` varchar(20) DEFAULT NULL,
   `nama` varchar(80) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `telepon` varchar(15) DEFAULT NULL,
-  `alamat` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `alamat` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `customer`
---
+-- Data exporting was unselected.
 
-INSERT INTO `customer` (`id`, `kode`, `nama`, `email`, `telepon`, `alamat`) VALUES
-(1, 'CST240', 'Smart Computer', 'smtcm@web.com', '082146738976', 'Sidareja');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `data_toko`
---
-
-CREATE TABLE `data_toko` (
-  `id` int(11) NOT NULL,
+-- Dumping structure for table db_inventori.data_toko
+DROP TABLE IF EXISTS `data_toko`;
+CREATE TABLE IF NOT EXISTS `data_toko` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nama_toko` varchar(80) DEFAULT NULL,
   `nama_pemilik` varchar(80) DEFAULT NULL,
   `no_telepon` varchar(15) DEFAULT NULL,
-  `alamat` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `alamat` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `data_toko`
---
+-- Data exporting was unselected.
 
-INSERT INTO `data_toko` (`id`, `nama_toko`, `nama_pemilik`, `no_telepon`, `alamat`) VALUES
-(1, 'Toko Maju Jaya', 'Nugroho', '081299764535', 'Sidareja');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `detail_keluar`
---
-
-CREATE TABLE `detail_keluar` (
+-- Dumping structure for table db_inventori.detail_keluar
+DROP TABLE IF EXISTS `detail_keluar`;
+CREATE TABLE IF NOT EXISTS `detail_keluar` (
   `no_keluar` varchar(25) DEFAULT NULL,
   `nama_barang` varchar(80) DEFAULT NULL,
   `jumlah` int(11) DEFAULT NULL,
   `satuan` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `detail_keluar`
---
+-- Data exporting was unselected.
 
-INSERT INTO `detail_keluar` (`no_keluar`, `nama_barang`, `jumlah`, `satuan`) VALUES
-('TR1584538942', 'Keyboard', 1, 'pcs'),
-('TR1584538942', 'Mouse', 1, 'pcs');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `detail_terima`
---
-
-CREATE TABLE `detail_terima` (
+-- Dumping structure for table db_inventori.detail_terima
+DROP TABLE IF EXISTS `detail_terima`;
+CREATE TABLE IF NOT EXISTS `detail_terima` (
   `no_terima` varchar(25) DEFAULT NULL,
   `nama_barang` varchar(80) DEFAULT NULL,
   `jumlah` int(11) DEFAULT NULL,
   `satuan` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `detail_terima`
---
+-- Data exporting was unselected.
 
-INSERT INTO `detail_terima` (`no_terima`, `nama_barang`, `jumlah`, `satuan`) VALUES
-('TR1584538872', 'Keyboard', 1, 'pcs'),
-('TR1584538872', 'Mouse', 1, 'pcs'),
-('TR1584539271', 'Keyboard', 4, 'pcs');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `penerimaan`
---
-
-CREATE TABLE `penerimaan` (
-  `id` int(11) NOT NULL,
+-- Dumping structure for table db_inventori.penerimaan
+DROP TABLE IF EXISTS `penerimaan`;
+CREATE TABLE IF NOT EXISTS `penerimaan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `no_terima` varchar(25) DEFAULT NULL,
   `tgl_terima` varchar(25) DEFAULT NULL,
   `jam_terima` varchar(10) DEFAULT NULL,
   `nama_supplier` varchar(80) DEFAULT NULL,
-  `nama_petugas` varchar(80) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `nama_petugas` varchar(80) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `no_terima` (`no_terima`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `penerimaan`
---
+-- Data exporting was unselected.
 
-INSERT INTO `penerimaan` (`id`, `no_terima`, `tgl_terima`, `jam_terima`, `nama_supplier`, `nama_petugas`) VALUES
-(3, 'TR1584538872', '18/03/2020', '20:41:12', 'Mutiara Comp', 'Nugrohoo'),
-(4, 'TR1584539271', '18/03/2020', '20:47:51', 'Mutiara Comp', 'Fanani');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `pengeluaran`
---
-
-CREATE TABLE `pengeluaran` (
-  `id` int(11) NOT NULL,
+-- Dumping structure for table db_inventori.pengeluaran
+DROP TABLE IF EXISTS `pengeluaran`;
+CREATE TABLE IF NOT EXISTS `pengeluaran` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `no_keluar` varchar(25) DEFAULT NULL,
   `tgl_keluar` varchar(25) DEFAULT NULL,
   `jam_keluar` varchar(10) DEFAULT NULL,
   `nama_customer` varchar(80) DEFAULT NULL,
-  `nama_petugas` varchar(80) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `nama_petugas` varchar(80) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `no_keluar` (`no_keluar`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `pengeluaran`
---
+-- Data exporting was unselected.
 
-INSERT INTO `pengeluaran` (`id`, `no_keluar`, `tgl_keluar`, `jam_keluar`, `nama_customer`, `nama_petugas`) VALUES
-(5, 'TR1584538942', '18/03/2020', '20:42:22', 'Smart Computer', 'Nugrohoo');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `pengguna`
---
-
-CREATE TABLE `pengguna` (
-  `id` int(11) NOT NULL,
+-- Dumping structure for table db_inventori.pengguna
+DROP TABLE IF EXISTS `pengguna`;
+CREATE TABLE IF NOT EXISTS `pengguna` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `kode` varchar(20) DEFAULT NULL,
   `nama` varchar(100) DEFAULT NULL,
   `username` varchar(20) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `password` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `pengguna`
---
+-- Data exporting was unselected.
 
-INSERT INTO `pengguna` (`id`, `kode`, `nama`, `username`, `password`) VALUES
-(1, 'PGN17', 'Nugrohoo', 'nugrohoff', 'pwd_nugroho');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `petugas`
---
-
-CREATE TABLE `petugas` (
-  `id` int(11) NOT NULL,
+-- Dumping structure for table db_inventori.petugas
+DROP TABLE IF EXISTS `petugas`;
+CREATE TABLE IF NOT EXISTS `petugas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `kode` varchar(20) DEFAULT NULL,
   `nama` varchar(100) DEFAULT NULL,
   `username` varchar(20) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `password` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `petugas`
---
+-- Data exporting was unselected.
 
-INSERT INTO `petugas` (`id`, `kode`, `nama`, `username`, `password`) VALUES
-(3, 'PETUGAS - 35', 'Fanani', 'PTGS35', 'pwd_fanani');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `supplier`
---
-
-CREATE TABLE `supplier` (
-  `id` int(11) NOT NULL,
+-- Dumping structure for table db_inventori.supplier
+DROP TABLE IF EXISTS `supplier`;
+CREATE TABLE IF NOT EXISTS `supplier` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `kode` varchar(20) DEFAULT NULL,
   `nama` varchar(80) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `telepon` varchar(15) DEFAULT NULL,
-  `alamat` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `alamat` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `supplier`
---
+-- Data exporting was unselected.
 
-INSERT INTO `supplier` (`id`, `kode`, `nama`, `email`, `telepon`, `alamat`) VALUES
-(1, 'SPL641', 'Mutiara Comp', 'mutcomp@web.com', '087814256738', 'Cilacap');
-
---
--- Indexes for dumped tables
---
-
---
--- Indeks untuk tabel `barang`
---
-ALTER TABLE `barang`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indeks untuk tabel `customer`
---
-ALTER TABLE `customer`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indeks untuk tabel `data_toko`
---
-ALTER TABLE `data_toko`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indeks untuk tabel `penerimaan`
---
-ALTER TABLE `penerimaan`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `no_terima` (`no_terima`);
-
---
--- Indeks untuk tabel `pengeluaran`
---
-ALTER TABLE `pengeluaran`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `no_keluar` (`no_keluar`);
-
---
--- Indeks untuk tabel `pengguna`
---
-ALTER TABLE `pengguna`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indeks untuk tabel `petugas`
---
-ALTER TABLE `petugas`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indeks untuk tabel `supplier`
---
-ALTER TABLE `supplier`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT untuk tabel yang dibuang
---
-
---
--- AUTO_INCREMENT untuk tabel `barang`
---
-ALTER TABLE `barang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT untuk tabel `customer`
---
-ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT untuk tabel `data_toko`
---
-ALTER TABLE `data_toko`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT untuk tabel `penerimaan`
---
-ALTER TABLE `penerimaan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT untuk tabel `pengeluaran`
---
-ALTER TABLE `pengeluaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT untuk tabel `pengguna`
---
-ALTER TABLE `pengguna`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT untuk tabel `petugas`
---
-ALTER TABLE `petugas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT untuk tabel `supplier`
---
-ALTER TABLE `supplier`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-COMMIT;
-
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
