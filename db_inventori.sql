@@ -29,7 +29,11 @@ CREATE TABLE IF NOT EXISTS `barang` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
--- Data exporting was unselected.
+-- Dumping data for table db_inventori.barang: ~1 rows (approximately)
+/*!40000 ALTER TABLE `barang` DISABLE KEYS */;
+REPLACE INTO `barang` (`id`, `kode_barang`, `nama_barang`, `stok`, `satuan`) VALUES
+	(3, '80488224', 'Dancow', 12, 'pcs');
+/*!40000 ALTER TABLE `barang` ENABLE KEYS */;
 
 -- Dumping structure for table db_inventori.customer
 DROP TABLE IF EXISTS `customer`;
@@ -43,7 +47,9 @@ CREATE TABLE IF NOT EXISTS `customer` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
--- Data exporting was unselected.
+-- Dumping data for table db_inventori.customer: ~0 rows (approximately)
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 
 -- Dumping structure for table db_inventori.data_toko
 DROP TABLE IF EXISTS `data_toko`;
@@ -56,7 +62,11 @@ CREATE TABLE IF NOT EXISTS `data_toko` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
--- Data exporting was unselected.
+-- Dumping data for table db_inventori.data_toko: ~1 rows (approximately)
+/*!40000 ALTER TABLE `data_toko` DISABLE KEYS */;
+REPLACE INTO `data_toko` (`id`, `nama_toko`, `nama_pemilik`, `no_telepon`, `alamat`) VALUES
+	(1, 'Toko Maju terus pantang mundur', 'Kripik Indomart', '081381100046', 'Jalan panjang menuju langit biru');
+/*!40000 ALTER TABLE `data_toko` ENABLE KEYS */;
 
 -- Dumping structure for table db_inventori.detail_keluar
 DROP TABLE IF EXISTS `detail_keluar`;
@@ -67,7 +77,9 @@ CREATE TABLE IF NOT EXISTS `detail_keluar` (
   `satuan` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Data exporting was unselected.
+-- Dumping data for table db_inventori.detail_keluar: ~0 rows (approximately)
+/*!40000 ALTER TABLE `detail_keluar` DISABLE KEYS */;
+/*!40000 ALTER TABLE `detail_keluar` ENABLE KEYS */;
 
 -- Dumping structure for table db_inventori.detail_terima
 DROP TABLE IF EXISTS `detail_terima`;
@@ -78,7 +90,9 @@ CREATE TABLE IF NOT EXISTS `detail_terima` (
   `satuan` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Data exporting was unselected.
+-- Dumping data for table db_inventori.detail_terima: ~0 rows (approximately)
+/*!40000 ALTER TABLE `detail_terima` DISABLE KEYS */;
+/*!40000 ALTER TABLE `detail_terima` ENABLE KEYS */;
 
 -- Dumping structure for table db_inventori.penerimaan
 DROP TABLE IF EXISTS `penerimaan`;
@@ -93,7 +107,9 @@ CREATE TABLE IF NOT EXISTS `penerimaan` (
   KEY `no_terima` (`no_terima`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
--- Data exporting was unselected.
+-- Dumping data for table db_inventori.penerimaan: ~0 rows (approximately)
+/*!40000 ALTER TABLE `penerimaan` DISABLE KEYS */;
+/*!40000 ALTER TABLE `penerimaan` ENABLE KEYS */;
 
 -- Dumping structure for table db_inventori.pengeluaran
 DROP TABLE IF EXISTS `pengeluaran`;
@@ -108,7 +124,9 @@ CREATE TABLE IF NOT EXISTS `pengeluaran` (
   KEY `no_keluar` (`no_keluar`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
--- Data exporting was unselected.
+-- Dumping data for table db_inventori.pengeluaran: ~0 rows (approximately)
+/*!40000 ALTER TABLE `pengeluaran` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pengeluaran` ENABLE KEYS */;
 
 -- Dumping structure for table db_inventori.pengguna
 DROP TABLE IF EXISTS `pengguna`;
@@ -121,7 +139,11 @@ CREATE TABLE IF NOT EXISTS `pengguna` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
--- Data exporting was unselected.
+-- Dumping data for table db_inventori.pengguna: ~1 rows (approximately)
+/*!40000 ALTER TABLE `pengguna` DISABLE KEYS */;
+REPLACE INTO `pengguna` (`id`, `kode`, `nama`, `username`, `password`) VALUES
+	(1, 'PGN17', 'Administrator', 'admin', 'admin');
+/*!40000 ALTER TABLE `pengguna` ENABLE KEYS */;
 
 -- Dumping structure for table db_inventori.petugas
 DROP TABLE IF EXISTS `petugas`;
@@ -134,7 +156,11 @@ CREATE TABLE IF NOT EXISTS `petugas` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
--- Data exporting was unselected.
+-- Dumping data for table db_inventori.petugas: ~1 rows (approximately)
+/*!40000 ALTER TABLE `petugas` DISABLE KEYS */;
+REPLACE INTO `petugas` (`id`, `kode`, `nama`, `username`, `password`) VALUES
+	(4, 'PETUGAS - 38', 'petugas01', 'PTGS38', 'petugas01');
+/*!40000 ALTER TABLE `petugas` ENABLE KEYS */;
 
 -- Dumping structure for table db_inventori.supplier
 DROP TABLE IF EXISTS `supplier`;
@@ -148,7 +174,11 @@ CREATE TABLE IF NOT EXISTS `supplier` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
--- Data exporting was unselected.
+-- Dumping data for table db_inventori.supplier: ~1 rows (approximately)
+/*!40000 ALTER TABLE `supplier` DISABLE KEYS */;
+REPLACE INTO `supplier` (`id`, `kode`, `nama`, `email`, `telepon`, `alamat`) VALUES
+	(2, 'SPL501', 'MAJU KOMPUTER', 'majukomputer@web.com', '085855312455', 'Jl. maju Komputer');
+/*!40000 ALTER TABLE `supplier` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
