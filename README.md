@@ -12,5 +12,5 @@ Untuk cara instalasi dan konfigurasi caranya sangat mudah
 3. Lalu buka terminal dan jalankan `composer install`
 4. Import `db_inventori.sql` ke database milik kalian
 5. Untuk login `admin` kalian bisa menggunakan username = `admin` dan password `admin`
-6. Untuk login `petugas` kalian bisa menggunakan username = `petugas01` dan password `petugas01`
+6. Untuk login `petugas` kalian bisa menggunakan username = `PTGS38` dan password `PTGS38`
 
